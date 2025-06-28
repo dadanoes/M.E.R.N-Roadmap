@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M.E.R.N. Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Chosen Palette: Calm Harmony (Background: #F8F7F4, Text: #3D405B, Primary: #81B29A, Accent: #E07A5F) -->
+    <!-- Application Structure Plan: Desain aplikasi ini menggunakan metafora timeline vertikal. Struktur ini dipilih karena secara intuitif merepresentasikan sebuah perjalanan atau proses belajar yang berurutan, dari Fase 1 hingga 6. Setiap fase adalah sebuah "langkah" di timeline. Untuk kemudahan navigasi, sebuah navigasi 'sticky' di bagian atas memungkinkan pengguna untuk melompat langsung ke fase mana pun. Di dalam setiap fase, konten yang detail diorganisir menggunakan tab ("Materi", "Proyek") untuk mencegah informasi yang berlebihan (information overload) dan memungkinkan pengguna fokus pada satu jenis informasi pada satu waktu. Struktur ini menggabungkan alur linear yang terpandu dengan kebebasan untuk eksplorasi non-linear, menjadikannya sangat efektif untuk dokumen berupa panduan atau jalur belajar. -->
+    <!-- Visualization & Content Choices: 1. Perbandingan Waktu (Goal: Compare): Sebuah Bar Chart horizontal digunakan di bagian atas untuk memvisualisasikan estimasi waktu setiap fase. Ini memberikan gambaran cepat mengenai distribusi beban kerja sepanjang jalur belajar. Interaksi: Hover pada bar chart akan menyorot kartu fase yang relevan. Library: Chart.js (Canvas). 2. Organisasi Konten Fase (Goal: Organize): Setiap fase disajikan dalam bentuk 'card' yang berisi deskripsi singkat dan konten detail dalam tab. Ini memecah informasi kompleks menjadi bagian-bagian yang mudah dicerna. Interaksi: Mengklik tab akan menampilkan konten yang sesuai. Method: HTML/CSS/JS. 3. Penekanan Teknologi (Goal: Inform): Teknologi kunci M.E.R.N. seperti 'React.js', 'Node.js', 'MongoDB' disajikan sebagai 'tag' yang menonjol secara visual. Method: Styled HTML (Tailwind CSS) + JS. Pilihan ini secara keseluruhan menciptakan pengalaman yang terstruktur, informatif, dan interaktif tanpa menggunakan SVG atau Mermaid, sesuai dengan batasan. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+  </head>
+  <body class="antialiased">
+    <div id="app" class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="text-center py-12 md:py-16">
+        <h1
+          class="text-4xl md:text-5xl font-bold tracking-tight text-[#3D405B]"
+        >
+          Roadmap menjadi M.E.R.N. Developer
+        </h1>
+        <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+          Panduan interaktif paling komprehensif untuk menguasai stack M.E.R.N.
+          (MongoDB, Express.js, React.js, Node.js), lengkap dengan sumber
+          belajar terbaik.
+        </p>
+      </header>
+
+      <nav
+        id="sticky-nav"
+        class="sticky top-0 z-10 bg-[#F8F7F4]/80 backdrop-blur-md py-3 mb-8 border-b border-gray-200"
+      >
+        <div
+          class="flex items-center justify-center space-x-2 sm:space-x-4 overflow-x-auto pb-2"
+        ></div>
+      </nav>
+
+      <main>
+        <section id="overview" class="mb-16">
+          <h2 class="text-2xl font-bold text-center mb-2">
+            Estimasi Waktu Belajar per Fase
+          </h2>
+          <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+            Visualisasi ini membantu Anda memahami alokasi waktu yang disarankan
+            untuk setiap fase. Gunakan ini untuk merencanakan perjalanan belajar
+            Anda secara efektif. Arahkan kursor ke bar untuk melihat detail
+            fase.
+          </p>
+          <div class="chart-container">
+            <canvas id="timeCommitmentChart"></canvas>
+          </div>
+        </section>
+
+        <section id="learning-path">
+          <h2 class="text-2xl font-bold text-center mb-2">
+            Jalur Pembelajaran
+          </h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Ikuti jalur ini langkah demi langkah. Setiap fase dirancang untuk
+            membangun fondasi yang kuat bagi fase berikutnya. Klik pada tab di
+            setiap fase untuk beralih antara materi pembelajaran dan detail
+            proyek yang disarankan.
+          </p>
+          <div id="timeline-container" class="relative"></div>
+        </section>
+      </main>
+
+      <footer class="text-center py-10 mt-16 border-t border-gray-200">
+        <p class="text-gray-500">Dibuat dengan &#10084; oleh D untuk M.E.R.N</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

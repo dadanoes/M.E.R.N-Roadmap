@@ -1,0 +1,64 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8f7f4;
+  color: #3d405b;
+}
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  max-height: 40vh;
+}
+@media (max-width: 768px) {
+  .chart-container {
+    height: 250px;
+  }
+}
+.tech-tag {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  font-weight: 500;
+}
+.active-tab {
+  border-color: #81b29a;
+  color: #3d405b;
+  background-color: #f8f7f4;
+}
+.inactive-tab {
+  border-color: transparent;
+  color: #6b7280;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #d1d5db;
+  z-index: -1;
+}
+.timeline-item:last-child::before {
+  display: none;
+}
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, 50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #f8f7f4;
+}
+.resource-link {
+  color: #6a994e;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.resource-link:hover {
+  color: #386641;
+}
